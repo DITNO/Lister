@@ -6,10 +6,17 @@
   <title>TO-DO list</title>
 </head>
 <body>
-  <% if(kindofday ==="SATURDAY" || kindofday === "SUNDAY") { %>
-    <h1 style="color: purple;"><%= kindofday %> TODO list</h1> 
-  <% } else { %>
-    <h1 style = "color: Blue"><%= kindofday %> TODO list</h1>   
-  <% } %>
+  <h1><%= kindofday %></h1>
+  <ul>
+    
+    <% for(var i =0;i<newlistItems.length;i++){ %>
+      <li><%= newlistItems[i] %></li>
+    <% } %>
+  
+  </ul>
+  <form action="/" method="post">
+    <input type="text" name="newItem">
+    <button type="submit" name="button">Add</button>
+  </form>
 </body>
 </html>
